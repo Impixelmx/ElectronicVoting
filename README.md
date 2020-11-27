@@ -23,3 +23,25 @@ Voto electrónico remoto a través de Internet (también llamado i-vote) donde e
 - **Garantía de verificación universal del voto:** cualquier participante u observador debe poder verificar los resultados de la votación.
 
 - **Garantía de fiabilidad:** el sistema está preparado contra ataques externos, fallos tecnológicos y ataques contra la privacidad de los votantes.
+
+# EVALUACIÓN DE CALIDAD 
+
+- Análisis del código fuente de la aplicación, para comprobar que no contiene código malicioso.
+
+- Análisis del diseño y estructura de la base de datos para comprobar aspectos como la privacidad y la legitimidad.
+
+- Comprobación del sistema empleado para almacenar y salvaguardar el censo de votantes.
+
+- Análisis de las medidas de seguridad lógica empleadas: de qué forma asegura el sistema la legitimidad, privacidad, corrección e integridad, qué herramientas criptográficas y de seguridad utiliza.
+
+- Análisis del control de acceso a todos los elementos del sistema (Bases de datos, claves, servidores, etc).
+
+- Comprobación de seguridad física.
+
+- Análisis de las posibles vulnerabilidades de los medios utilizados por los votantes.
+
+- Comprobación del sistema empleado para la realización y publicación del escrutinio (resultado de la votación).
+
+- Prueba completa del sistema: realización de varias votaciones de prueba e intentos de ataque al sistema para comprometer su fiabilidad (ataques DoS, suplantación de identidad, etc). Las pruebas se han hecho verificando todas las fases de la votación: desde la comprobación del censo, pasando por la fase de voto (autenticación, votación, verificación) y terminando por la fase de recuento o escrutinio y verificación de resultados.
+
+El resultado final ha sido totalmente satisfactorio, consiguiendo la máxima puntuación (5 sobre 5).
