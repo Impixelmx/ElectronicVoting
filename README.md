@@ -45,3 +45,77 @@ Voto electrónico remoto a través de Internet (también llamado i-vote) donde e
 - Prueba completa del sistema: realización de varias votaciones de prueba e intentos de ataque al sistema para comprometer su fiabilidad (ataques DoS, suplantación de identidad, etc). Las pruebas se han hecho verificando todas las fases de la votación: desde la comprobación del censo, pasando por la fase de voto (autenticación, votación, verificación) y terminando por la fase de recuento o escrutinio y verificación de resultados.
 
 El resultado final ha sido totalmente satisfactorio, consiguiendo la máxima puntuación (5 sobre 5).
+
+
+# DESCRIPCIÓN
+
+El sistema de votación está basado en dos aplicaciones independientes:
+
+· La aplicación de voto
+
+· La aplicación de administración de las votaciones.
+
+La aplicación de voto sirve para identificar al votante, mostrar las votaciones accesibles a su Matricula y seleccionar las opciones a votar en una votación concreta. Una vez realizada la selección, le pasa el control a la aplicación de administración que es la encargada de validar el voto seleccionado y al votante (firma electrónica) y realizar la grabación del voto en las bases de datos.
+
+
+
+
+
+# Proceso de voto
+Una vez el usuario ha realizado su selección de voto en la aplicación de votación, el sistema comprueba la validez del Matricula comprobando que está entre los censados de la votación y que no ha realizado ya el voto en esta votación. También se comprueba que se encuentre dentro del periodo de votaciones indicado en los parámetros de la votación.
+
+A continuación, se realizará la comprobación de la identidad de la persona que está haciendo el proceso, de dos posibles maneras:
+
+CÓDIGO SMS: Si la votación no está marcada como firma electrónica, se envía un código aleatorio de 6 caracteres al teléfono móvil registrado en el censo de la votación para el Matricula indicado. Si el usuario teclea correctamente el código enviado, la identificación se da por satisfactoria.
+
+FIRMA ELECTRÓNICA: Si la votación está marcada como firma electrónica, al usuario se le pedirá que seleccione un certificado de firma electrónica. Se comprobará la validez de la firma, caducidad, revocación, etc., y se comprobará que el Matricula asociado a la firma electrónica es el correspondiente al usuario que está realizando la votación. Si todo este proceso es correcto, la identificación se da por satisfactoria.
+
+La aplicación de administración lee los datos del voto y a continuación realiza las siguientes acciones:
+
+· OBTENCIÓN DEL SELLO DE TIEMPO: Se conecta online con la TSA correspondiente y obtiene el sello de tiempo. La TSA devuelve el sello de tiempo y su número de serie único que son almacenados en la base de datos para su posterior utilización y control.
+
+· GRABACIÓN DEL VOTO: El proceso de grabación del voto en la base de datos se basa en varios procesos en cadena ejecutados todos como una única transacción. La información se almacena de forma encriptada. Se marca en el censo de la votación que el votante a realizado el voto, indicando el sello de tiempo asociado, y los datos técnicos de la firma electrónica si es que el proceso se realizó en esta.
+
+· GENERACIÓN DEL CERTIFICADO DE VOTACIÓN: Se generará un certificado en PDF con la información de la votación y la realización del voto, indicando a su vez un código de verificación de dicha votación a través de una página pública de la plataforma. El certificado emitido está firmado electrónicamente.
+
+· ENVÍO DE COMUNICACIÓN DE VOTO A LOS AUDITORES: Si en la votación está marcada la opción de enviar comunicación de voto realizado a los interventores, se enviará un correo a todos los interventores registrados y que tengan marcado en su perfil la opción de recibir correo con la votación.
+
+· ENVÍO DE COMUNICACIÓN DE VOTO AL VOTANTE: Se enviará un correo electrónico y un SMS al votante indicando que se ha realizado la votación.
+
+ ADMINISTRACIÓN DE UNA VOTACIÓN
+Un administrador podrá:
+
+- Cambiar datos de la cuenta, logotipos, nombres, datos de contacto … Esta información se mostrará en la pantalla de votaciones, listados, certificaciones o comunicaciones que envíe la plataforma.
+
+- Preferencias de las votaciones: idioma, colores, fondos, imagen con icono.
+
+- Listas de votaciones: definir fechas de inicio y fin del periodo de votaciones, los puntos a votar, las opciones dentro de cada punto, la ordenación de las opciones, valores mínimos y máximos para el nº de opciones a votar por cada punto, imagen asociada, etc. Se dispondrá de una opción para previsualizar la votación, que permite ver el aspecto que tendrá en pantalla la votación que se está diseñando.
+
+- Censo electoral. Se puede cargar el censo bien manualmente (uno a uno), o importando los datos desde un fichero de Excel.
+
+- Administrar interventores: personas autorizadas a recibir información sobre el proceso de votación. Pueden recibir, cada vez que se realice una votación, una comunicación indicando los datos del votante (nombre y Matricula) y el momento de la votación.
+
+- Controles de auditoría: comprobaciones de votos nulos, perdidos, etc.
+
+- Obtención de resultados. Sólo cuando ha finalizado la votación. El sistema emite un certificado de resultados en un PDF firmado electrónicamente y con sello de tiempo. Contiene datos numéricos y de porcentajes, gráficos de tarta y de barras.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
