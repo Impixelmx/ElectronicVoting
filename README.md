@@ -51,9 +51,9 @@ El resultado final ha sido totalmente satisfactorio, consiguiendo la máxima pun
 
 El sistema de votación está basado en dos aplicaciones independientes:
 
-· La aplicación de voto
+- La aplicación de voto
 
-· La aplicación de administración de las votaciones.
+- La aplicación de administración de las votaciones.
 
 La aplicación de voto sirve para identificar al votante, mostrar las votaciones accesibles a su Matricula y seleccionar las opciones a votar en una votación concreta. Una vez realizada la selección, le pasa el control a la aplicación de administración que es la encargada de validar el voto seleccionado y al votante (firma electrónica) y realizar la grabación del voto en las bases de datos.
 
