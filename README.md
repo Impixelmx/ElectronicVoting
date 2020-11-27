@@ -92,10 +92,10 @@ Un administrador podrá:
 
 - **Listas de votaciones:** definir fechas de inicio y fin del periodo de votaciones, los puntos a votar, las opciones dentro de cada punto, la ordenación de las opciones, valores mínimos y máximos para el nº de opciones a votar por cada punto, imagen asociada, etc. Se dispondrá de una opción para previsualizar la votación, que permite ver el aspecto que tendrá en pantalla la votación que se está diseñando.
 
-- Censo electoral. Se puede cargar el censo bien manualmente (uno a uno), o importando los datos desde un fichero de Excel.
+- **Censo electoral:** Se puede cargar el censo bien manualmente (uno a uno), o importando los datos desde un fichero de Excel.
 
 - **Administrar interventores:** personas autorizadas a recibir información sobre el proceso de votación. Pueden recibir, cada vez que se realice una votación, una comunicación indicando los datos del votante (nombre y Matricula) y el momento de la votación.
 
 - **Controles de auditoría:** comprobaciones de votos nulos, perdidos, etc.
 
-- Obtención de resultados. Sólo cuando ha finalizado la votación. El sistema emite un certificado de resultados en un PDF firmado electrónicamente y con sello de tiempo. Contiene datos numéricos y de porcentajes, gráficos de tarta y de barras.
+- **Obtención de resultados:** Sólo cuando ha finalizado la votación. El sistema emite un certificado de resultados en un PDF firmado electrónicamente y con sello de tiempo. Contiene datos numéricos y de porcentajes, gráficos de tarta y de barras.
