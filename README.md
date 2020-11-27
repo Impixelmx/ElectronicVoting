@@ -80,11 +80,11 @@ La aplicación de administración lee los datos del voto y a continuación reali
 
 - **ENVÍO DE COMUNICACIÓN DE VOTO A LOS AUDITORES:** Si en la votación está marcada la opción de enviar comunicación de voto realizado a los interventores, se enviará un correo a todos los interventores registrados y que tengan marcado en su perfil la opción de recibir correo con la votación.
 
-- ENVÍO DE COMUNICACIÓN DE VOTO AL VOTANTE: Se enviará un correo electrónico y un SMS al votante indicando que se ha realizado la votación.
+- **ENVÍO DE COMUNICACIÓN DE VOTO AL VOTANTE:** Se enviará un correo electrónico y un SMS al votante indicando que se ha realizado la votación.
 
 # ADMINISTRACIÓN DE UNA VOTACIÓN
 
-Un administrador podrá:
+**Un administrador podrá:**
 
 - Cambiar datos de la cuenta, logotipos, nombres, datos de contacto … Esta información se mostrará en la pantalla de votaciones, listados, certificaciones o comunicaciones que envíe la plataforma.
 
